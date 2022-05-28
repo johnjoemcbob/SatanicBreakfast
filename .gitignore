@@ -58,3 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+
+# New unity UserSettings folder should be ignored - they ported this from the Library folder
+[Uu]serSettings/
