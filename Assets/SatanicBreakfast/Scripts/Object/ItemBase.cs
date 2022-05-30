@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class ItemBase : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+    public bool Held = false;
 
     public virtual void OnPickup()
 	{

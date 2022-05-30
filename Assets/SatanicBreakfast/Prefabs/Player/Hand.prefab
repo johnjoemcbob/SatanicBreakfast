@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 0.2, y: 0.2, z: 0.2}
+  multiplierPos: {x: 0.1, y: 0.1, z: 0.2}
   multiplierRot: 0.2
-  mass: 500
+  mass: 1000
   damping: 10
 --- !u!1 &2060197717619090374
 GameObject:
@@ -100,10 +100,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 0.2, y: 0.2, z: 0.2}
+  multiplierPos: {x: 0.1, y: 0.1, z: 0.2}
   multiplierRot: 0.2
-  mass: 500
+  mass: 1000
   damping: 10
+--- !u!1 &2297286651055087814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 522306678135813487}
+  - component: {fileID: 2106443790630084742}
+  m_Layer: 6
+  m_Name: clay_cylinder+ (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &522306678135813487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297286651055087814}
+  m_LocalRotation: {x: -0.064976364, y: 0.9262546, z: -0.3140451, w: -0.19800563}
+  m_LocalPosition: {x: -0.19199996, y: 0.39599976, z: -1.18}
+  m_LocalScale: {x: 0.19567, y: 1.8685896, z: 0.19566998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3901883611720330124}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 37.409, y: 204.231, z: 0.288}
+--- !u!114 &2106443790630084742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297286651055087814}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abbfd96705db9d42bf2ff005c1a5a71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blend: 0
+  color: {r: 0.9433962, g: 0.6541474, b: 0.88742584, a: 1}
+  attrs: {x: 0.42, y: 0, z: -0.32, w: 0}
+  attrs2: {x: 0, y: 0, z: 0, w: 0}
+  primitiveType: 2
+  mode: 0
+  offsetter: {fileID: 0}
+  splinePoints: []
+  clayObjectId: 13
+  numSolids: 1
+  splineSubdiv: 3
 --- !u!1 &3901883610835121622
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +211,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 10
+  clayObjectId: 9
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883610838285426
@@ -183,12 +238,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901883610838285426}
-  m_LocalRotation: {x: 0.60876167, y: -0, z: -0, w: 0.79335326}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.60876167, y: -0.000000014901161, z: -0, w: 0.79335326}
+  m_LocalPosition: {x: 0, y: 0.18999936, z: 0.7400001}
   m_LocalScale: {x: 0.19567, y: 1.8685896, z: 0.19567}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3901883611720330124}
+  m_Father: {fileID: 7561004393292683761}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
 --- !u!114 &3901883610838285428
@@ -211,7 +266,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 0
+  clayObjectId: 12
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883610844391300
@@ -266,7 +321,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 6
+  clayObjectId: 5
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883610895482001
@@ -321,7 +376,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 3
+  clayObjectId: 2
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883610993215441
@@ -376,7 +431,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 9
+  clayObjectId: 8
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611023627180
@@ -431,7 +486,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 12
+  clayObjectId: 11
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611081023654
@@ -486,7 +541,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 2
+  clayObjectId: 1
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611267485519
@@ -573,7 +628,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 11
+  clayObjectId: 10
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611469939522
@@ -628,7 +683,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 7
+  clayObjectId: 6
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611720330125
@@ -643,7 +698,7 @@ GameObject:
   - component: {fileID: 3901883611720330127}
   - component: {fileID: 3901883611720330126}
   - component: {fileID: 3901883611720330112}
-  - component: {fileID: 619841988992359749}
+  - component: {fileID: 2296161253684998187}
   m_Layer: 6
   m_Name: Hand
   m_TagString: Untagged
@@ -663,8 +718,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8802584818808636084}
-  - {fileID: 3901883610838285429}
+  - {fileID: 7561004393292683761}
+  - {fileID: 522306678135813487}
   m_Father: {fileID: 3901883611267485518}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -749,9 +804,8 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 739027771fedf604392ca776429ac147, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 0f7227206f378004ca77b64f244a8be1, type: 2}
   m_Bones:
-  - {fileID: 3901883610838285429}
   - {fileID: 3901883611772998395}
   - {fileID: 3901883611081023577}
   - {fileID: 3901883610895482000}
@@ -764,11 +818,13 @@ SkinnedMeshRenderer:
   - {fileID: 3901883610835121609}
   - {fileID: 3901883611299658966}
   - {fileID: 3901883611023627183}
+  - {fileID: 3901883610838285429}
+  - {fileID: 522306678135813487}
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 3.5, y: 3.5, z: 3.5}
+    m_Extent: {x: 0.7, y: 0.7, z: 0.7}
   m_DirtyAABB: 0
 --- !u!114 &3901883611720330112
 MonoBehaviour:
@@ -784,18 +840,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 1, y: 1, z: 1}
-  multiplierRot: 1
-  mass: 500
+  multiplierPos: {x: 0.1, y: 1, z: 0.5}
+  multiplierRot: 0.2
+  mass: 1000
   damping: 10
---- !u!33 &619841988992359749
+--- !u!33 &2296161253684998187
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3901883611720330125}
-  m_Mesh: {fileID: 4300000, guid: 739027771fedf604392ca776429ac147, type: 2}
+  m_Mesh: {fileID: 4300000, guid: 0f7227206f378004ca77b64f244a8be1, type: 2}
 --- !u!1 &3901883611772998392
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +904,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 1
+  clayObjectId: 0
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883611997567392
@@ -903,7 +959,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 5
+  clayObjectId: 4
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883612338366627
@@ -958,7 +1014,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 4
+  clayObjectId: 3
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &3901883612603612546
@@ -1013,7 +1069,7 @@ MonoBehaviour:
   mode: 0
   offsetter: {fileID: 0}
   splinePoints: []
-  clayObjectId: 8
+  clayObjectId: 7
   numSolids: 1
   splineSubdiv: 3
 --- !u!1 &4744769011002554579
@@ -1064,9 +1120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 0.2, y: 0.2, z: 0.2}
+  multiplierPos: {x: 0.1, y: 0.1, z: 0.2}
   multiplierRot: 0.2
-  mass: 500
+  mass: 1000
   damping: 10
 --- !u!1 &4872957754492984062
 GameObject:
@@ -1116,10 +1172,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 0.2, y: 0.2, z: 0.2}
+  multiplierPos: {x: 0.1, y: 0.1, z: 0.2}
   multiplierRot: 0.2
-  mass: 500
+  mass: 1000
   damping: 10
+--- !u!1 &5749965700811944457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7561004393292683761}
+  m_Layer: 6
+  m_Name: Elbow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7561004393292683761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5749965700811944457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.19, z: -0.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8802584818808636084}
+  - {fileID: 3901883610838285429}
+  m_Father: {fileID: 3901883611720330124}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6462231800861389061
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,8 +1232,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462231800861389061}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.146, z: 0.798}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3360002, z: 1.5380002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1155,7 +1244,7 @@ Transform:
   - {fileID: 5899782808635576599}
   - {fileID: 2146052689859193056}
   - {fileID: 4078965374016209702}
-  m_Father: {fileID: 3901883611720330124}
+  m_Father: {fileID: 7561004393292683761}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7944962726036512646
@@ -1237,9 +1326,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputPos: {x: 0, y: 0, z: 0}
   inputRot: {x: 0, y: 0, z: 0, w: 0}
-  multiplierPos: {x: 0.2, y: 0.2, z: 0.2}
+  multiplierPos: {x: 0.1, y: 0.1, z: 0.2}
   multiplierRot: 0.2
-  mass: 500
+  mass: 1000
   damping: 10
 --- !u!1 &8238842957964967579
 GameObject:
