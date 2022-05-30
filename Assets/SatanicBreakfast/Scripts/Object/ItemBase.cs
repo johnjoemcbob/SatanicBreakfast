@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ItemBase : MonoBehaviour
 {
-    public bool Held = false;
+    public float Radius = 0.5f;
+    public float GrabUpOffset = 0;
 
     public virtual void OnPickup()
 	{

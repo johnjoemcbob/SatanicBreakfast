@@ -14,7 +14,6 @@ public class HandsController : MonoBehaviour
     [Header( "Variables" )]
     public float PICKUP_RADIUS = 0.5f;
     public float PICKUP_DISTANCE = 5;
-    public float DROP_RADIUS = 0.5f;
     public float HandLerpSpeed = 5;
 
     [Header( "References" )]
@@ -56,7 +55,29 @@ public class HandsController : MonoBehaviour
 
             // Updates
             UpdateState( hand );
+
+            var auto = Hands[hand].GetComponentInChildren<Autohand.Hand>();
+            if ( HandState[hand] != State.PICKUP )
+            {
+                auto.transform.localPosition = Vector3.zero;
+                auto.transform.localEulerAngles = new Vector3( 0, 0, 90 );
+            }
+            //if ( CurrentHeld[hand] != null && HandState[hand] == State.PICKUP )
+            //{
+            //    var look = auto.transform.position - ( CurrentHeld[hand].transform.position - auto.transform.position );
+            //    auto.transform.LookAt( look );
+            //}
         }
+
+        // temp
+        //if ( Input.GetKey( KeyCode.K ) )
+        //{
+        //    FindObjectOfType<Autohand.Hand>().Grab();
+        //}
+        //else
+        //{
+        //    FindObjectOfType<Autohand.Hand>().Release();
+        //}
     }
 
 	#region Pickup/Drop
@@ -66,23 +87,19 @@ public class HandsController : MonoBehaviour
         if ( CurrentHeld[hand] != null ) return;
 
         // Physics sphere cast forward
-        RaycastHit hit;
-        if ( Physics.SphereCast( Player.Camera.transform.position, PICKUP_RADIUS, Player.Camera.transform.forward, out hit, PICKUP_DISTANCE ) )
+        Vector3 sphere = Player.Camera.transform.position + Player.Camera.transform.forward;
+        Collider[] hitColliders = Physics.OverlapSphere( sphere, PICKUP_RADIUS * 10 );
+        foreach ( var hit in hitColliders )
         {
             // If has ItemBase component
             var item = hit.transform.GetComponentInParent<ItemBase>();
-            if ( item != null && !item.Held )
+            if ( item != null && !item.GetComponent<Autohand.Grabbable>().beingGrabbed )
             {
                 CurrentHeld[hand] = item;
-                CurrentHeld[hand].Held = true;
-
-                // Pickup code
-                var body = CurrentHeld[hand].GetComponent<Rigidbody>();
-                body.isKinematic = true;
-
-                CurrentHeld[hand].gameObject.layer = LayerMask.NameToLayer( "HandDisplay" );
 
                 SwitchState( hand, State.PICKUP );
+
+                break;
             }
         }
     }
@@ -95,22 +112,24 @@ public class HandsController : MonoBehaviour
             // If it can't reach the position, you can't drop (sorry)
             RaycastHit hit;
             Vector3 start = Player.Camera.transform.position - Player.Camera.transform.forward * 0.2f + Vector3.up * 0.2f;
-            Vector3 end = CurrentHeld[hand].transform.position + Player.Camera.transform.forward * DROP_RADIUS;
+            Vector3 end = CurrentHeld[hand].transform.position + Player.Camera.transform.forward * CurrentHeld[hand].Radius;
             Vector3 dir = ( end - start ).normalized;
             float dist = Vector3.Distance( start, end );
-            int layer = ~((1 << LayerMask.NameToLayer( "HandDisplay" )) | (1 << LayerMask.NameToLayer( "Player" )));
-            bool drop = !Physics.SphereCast( start, DROP_RADIUS, dir, out hit, dist, layer );
+            int layer = ~((1 << LayerMask.NameToLayer( "HandDisplay" )) | (1 << LayerMask.NameToLayer( "Player" ))| (1 << LayerMask.NameToLayer( "Hand" )));
+            bool drop = !Physics.SphereCast( start, CurrentHeld[hand].Radius, dir, out hit, dist, layer );
 			if ( drop )
             {
                 CurrentHeld[hand].OnDrop();
 
+                CurrentHeld[hand].transform.SetParent( null );
+				foreach ( var collider in CurrentHeld[hand].GetComponentsInChildren<Collider>() )
+                {
+                    collider.gameObject.layer = LayerMask.NameToLayer( "Item" );
+                }
+
                 var body = CurrentHeld[hand].GetComponent<Rigidbody>();
                 body.isKinematic = false;
 
-                CurrentHeld[hand].transform.SetParent( null );
-                CurrentHeld[hand].gameObject.layer = LayerMask.NameToLayer( "Item" );
-
-                CurrentHeld[hand].Held = false;
                 CurrentHeld[hand] = null;
 
                 SwitchState( hand, State.IDLE );
@@ -137,14 +156,24 @@ public class HandsController : MonoBehaviour
         switch ( HandState[hand] )
         {
             case State.IDLE:
+                Hands[hand].GetComponentInChildren<Autohand.Hand>().Release();
                 break;
             case State.PICKUP:
                 HandTime[hand] = 0;
                 break;
             case State.HELD:
                 HandTime[hand] = 0;
-                CurrentHeld[hand].transform.SetParent( HeldPivots[hand] );
-                CurrentHeld[hand].transform.localPosition = Vector3.zero;
+                //CurrentHeld[hand].transform.SetParent( HeldPivots[hand] );
+                //CurrentHeld[hand].transform.localPosition = Vector3.zero;
+                CurrentHeld[hand].transform.position += Vector3.up * CurrentHeld[hand].GrabUpOffset;
+
+                //Hands[hand].GetComponentInChildren<Autohand.Hand>().TryGrab( CurrentHeld[hand].GetComponentInChildren<Autohand.Grabbable>() );
+
+                //CurrentHeld[hand].gameObject.layer = LayerMask.NameToLayer( "HandDisplay" );
+                foreach ( var collider in CurrentHeld[hand].GetComponentsInChildren<Collider>() )
+                {
+                    collider.gameObject.layer = LayerMask.NameToLayer( "HandDisplay" );
+                }
 
                 break;
             default:
@@ -174,7 +203,7 @@ public class HandsController : MonoBehaviour
 
                 // Move towards
                 // Find correct position via HeldPivot at 0,0,0
-                target = CurrentHeld[hand].transform.position + ( Hands[hand].position - HeldPivots[hand].position );
+                target = CurrentHeld[hand].transform.position;// + ( Hands[hand].position );// - HeldPivots[hand].position );
                     target += Player.Camera.transform.right * Mathf.Cos( ( 1 - HandTime[hand] ) * 180 * 2 ) * 0.5f;
                 trans = Hands[hand].GetChild( 0 ).GetChild( 0 );
                 trans.position = Vector3.Lerp( trans.position, target, HandTime[hand] );
@@ -182,11 +211,18 @@ public class HandsController : MonoBehaviour
                 dist = Vector3.Distance( trans.position, target );
                 if ( dist < 0.1f )
                 {
-                    // Switch state on arrival
-                    SwitchState( hand, State.HELD );
+                    var body = CurrentHeld[hand].GetComponent<Rigidbody>();
+                    body.isKinematic = true;
+
+                    var grab = CurrentHeld[hand].GetComponentInChildren<Autohand.Grabbable>();
+                    Hands[hand].GetComponentInChildren<Autohand.Hand>().TryGrab( grab );
+                    if ( grab.IsHeld() )
+                    {
+                        SwitchState( hand, State.HELD );
+                    }
                 }
 
-				break;
+                break;
 			case State.HELD:
                 HandTime[hand] = Mathf.Min( 1, HandTime[hand] + Time.deltaTime * HandLerpSpeed );
 
