@@ -123,6 +123,59 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!21 &616079414
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clayxels/ClayxelURPShaderMicroVoxelASE_2021_2
+  m_Shader: {fileID: 4800000, guid: e6917439ca962034da1eca37759809d5, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - UNITY_INSTANCING_ENABLED
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e1e6da454f95b40469ddddb65d69ebfe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _Metallic: 0
+    - _Smoothness: 0
+    - _alphaCutout: 0
+    - _backFillAlpha: 1
+    - _backFillDark: 1
+    - _emissionPower: 0
+    - _roughColor: 0
+    - _roughOrientX: 0
+    - _roughOrientY: 0
+    - _roughOrientZ: 0
+    - _roughPos: 0
+    - _roughSize: 0
+    - _roughTwist: 0
+    - _splatBillboard: 0
+    - _splatSizeMult: 1
+    - _subsurfaceScatter: 0
+    m_Colors:
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _emissiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _subsurfaceCenter: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,14 +368,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0.9917319, z: -0, w: -0.12832707}
-  m_LocalPosition: {x: -1.55, y: 1.7, z: 5.51}
+  m_LocalRotation: {x: 0.11809225, y: 0.72164065, z: -0.12701151, w: 0.6701919}
+  m_LocalPosition: {x: -1.3364846, y: 0.692435, z: 0.24437778}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -194.746, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.805, y: -194.746, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,3 +409,178 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!21 &1559827143
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clayxels/ClayxelURPShaderMicroVoxelASE_2021_2
+  m_Shader: {fileID: 4800000, guid: e6917439ca962034da1eca37759809d5, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - UNITY_INSTANCING_ENABLED
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e1e6da454f95b40469ddddb65d69ebfe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _Metallic: 0
+    - _Smoothness: 0
+    - _alphaCutout: 0
+    - _backFillAlpha: 1
+    - _backFillDark: 1
+    - _emissionPower: 0
+    - _roughColor: 0
+    - _roughOrientX: 0
+    - _roughOrientY: 0
+    - _roughOrientZ: 0
+    - _roughPos: 0
+    - _roughSize: 0
+    - _roughTwist: 0
+    - _splatBillboard: 0
+    - _splatSizeMult: 1
+    - _subsurfaceScatter: 0
+    m_Colors:
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _emissiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _subsurfaceCenter: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &1803232677
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clayxels/ClayxelURPShaderMicroVoxelASE_2021_2
+  m_Shader: {fileID: 4800000, guid: e6917439ca962034da1eca37759809d5, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - UNITY_INSTANCING_ENABLED
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e1e6da454f95b40469ddddb65d69ebfe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaCutoff: 0.5
+    - _Metallic: 0
+    - _Smoothness: 0
+    - _alphaCutout: 0
+    - _backFillAlpha: 1
+    - _backFillDark: 1
+    - _emissionPower: 0
+    - _roughColor: 0
+    - _roughOrientX: 0
+    - _roughOrientY: 0
+    - _roughOrientZ: 0
+    - _roughPos: 0
+    - _roughSize: 0
+    - _roughTwist: 0
+    - _splatBillboard: 0
+    - _splatSizeMult: 1
+    - _subsurfaceScatter: 0
+    m_Colors:
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _emissiveColor: {r: 1, g: 1, b: 1, a: 1}
+    - _subsurfaceCenter: {r: 0, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!1001 &1711207659131537099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 610381173853453268, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_Name
+      value: Satan_NewLegs
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381173853453269, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 610381174491553029, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 1559827143}
+    - target: {fileID: 610381174553308505, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 616079414}
+    - target: {fileID: 610381175292362373, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 1803232677}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 995f725163216ee44b1a306b497ea59f, type: 3}
